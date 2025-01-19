@@ -13,6 +13,7 @@ const ProfessionalExperienceComponent = () => {
         "itGlee and BelleEpoque new website development using React and TailwindCSS.",
       keyAchievements: [
         "Built user-friendly, accessible and responsive websites.",
+        "SEO optimization for better search engine rankings.",
         "Integration with Email and Google Drive plugins.",
         "Deployed the websites using AWS.",
       ],
@@ -49,7 +50,7 @@ const ProfessionalExperienceComponent = () => {
   ];
 
   return (
-    <div className="p-8 md:px-80 bg-zinc-800 text-white">
+    <div className="p-8 md:px-80 bg-zinc-800 text-zinc-300">
       <h2 className="text-4xl font-semibold mb-6 text-center font-sourceCode">Professional Experience</h2>
       
       <div className="space-y-8">

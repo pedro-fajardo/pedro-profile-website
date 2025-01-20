@@ -83,7 +83,7 @@ const ProfessionalExperienceComponent = () => {
                         {/* Technologies */}
                         {exp.techStack && (
                             <div className="mt-4">
-                                <h4 className="text-lg font-semibold text-red-500 mb-2">Technologies Used:</h4>
+                                <h4 className="text-lg font-semibold text-red-500 mb-2">Technologies and Skills:</h4>
                                 <ul className="flex flex-wrap gap-2 text-lg text-zinc-200">
                                     {exp.techStack.map((tech, i) => (
                                         <li key={i} className="px-3 py-1 bg-red-900 rounded-full">{tech}</li>

@@ -47,7 +47,7 @@ const FloatingHamburgerMenu = () => {
                 <div className={`bg-zinc-600 rounded shadow-lg py-2 w-54 ${closing ? "animate-fadeOutDown" : "animate-fadeInUp"}`}>
                     <ul className="flex flex-col space-y-2">
                         {menuOptions.map((option, index) => (
-                            <button onClick={() => { handleComponentScroll(option.scrollInto) }}>
+                            <button key={index} onClick={() => { handleComponentScroll(option.scrollInto) }}>
                                 <li
                                     key={index}
                                     className={`px-4 py-2 flex items-center space-x-3 ${closing ? "opacity-100" : "opacity-0 animate-fadeInUp"}`}

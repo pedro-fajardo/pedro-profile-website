@@ -60,7 +60,7 @@ const LandingPage = ({ loading, setLoading }) => {
             {!loading && (
                 <>
                     {/* Typing text */}
-                    <div className="absolute z-10">
+                    <div className="absolute z-10 text-center px-16 md:px-0">
                         <h1 className="animate-fade font-semibold text-6xl text-zinc-200 font-sourceCode">{text}</h1>
                     </div>
 

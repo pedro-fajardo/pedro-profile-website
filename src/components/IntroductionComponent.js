@@ -29,23 +29,23 @@ const IntroductionComponent = () => {
                     </p>
                 </div>
             </div>
-            <div className="w-full px-60 bg-zinc-800 font-sourceCode pb-16">
-                <div className="bg-zinc-200 py-24 px-24 border-8 bg-zinc-200 border-zinc-500 rounded-md grid justify-items-center transition ">
-                    <h2 className="text-3xl font-bold pb-8"><FontAwesomeIcon icon={faBaby}></FontAwesomeIcon> Full Name</h2>
-                    <p className="text-2xl pb-16">Pedro Miguel Oliveira Fajardo</p>
+            <div className="w-full  bg-zinc-800 font-sourceCode pb-16">
+                <div className="bg-zinc-200 mx-4 md:mx-60 py-14 md:py-24 px-8 md:px-24 border-8 bg-zinc-200 border-zinc-500 rounded-md text-center justify-items-center">
+                    <h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faBaby}></FontAwesomeIcon> Full Name</h2>
+                    <p className="text-xl md:text-2xl pb-10 md:pb-16">Pedro Miguel Oliveira Fajardo</p>
 
-                    <h2 className="text-3xl font-bold pb-8"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon> Born</h2>
-                    <p className="text-2xl pb-16">27 Aug 1998 - Figueira da Foz, Portugal</p>
+                    <h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon> Born</h2>
+                    <p className="text-xl md:text-2xl pb-10 md:pb-16">27 Aug 1998 - Figueira da Foz, Portugal</p>
 
-                    <h2 className="text-3xl font-bold pb-8"><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> Currently Living</h2>
-                    <p className="text-2xl pb-16">Guia, Portugal</p>
+                    <h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> Currently Living</h2>
+                    <p className="text-xl md:text-2xl pb-10 md:pb-16">Guia, Portugal</p>
 
-                    <h2 className="text-3xl font-bold pb-8"><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon> Email</h2>
-                    <p className="text-2xl pb-16">pedro.fajardo.dev@gmail.com</p>
+                    <h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon> Email</h2>
+                    <p className="text-xl md:text-2xl pb-10 md:pb-16">pedro.fajardo.dev@gmail.com</p>
 
-                    <h2 className="text-3xl font-bold pb-8"><FontAwesomeIcon icon={faGraduationCap}></FontAwesomeIcon> Degree</h2>
-                    <p className="text-2xl">Bachelor's Degree in Computer Science</p>
-                    <p className="text-lg">Universidade de Aveiro</p>
+                    <h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faGraduationCap}></FontAwesomeIcon> Degree</h2>
+                    <p className="text-xl md:text-2xl">Bachelor's Degree in Computer Science</p>
+                    <p className="text-md">Universidade de Aveiro</p>
                 </div>
             </div>
         </>

@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/pedro-profile-website/static/css/main.762feb83.css",
-    "main.js": "/pedro-profile-website/static/js/main.cf53eee4.js",
+    "main.css": "/pedro-profile-website/static/css/main.60c6b0d2.css",
+    "main.js": "/pedro-profile-website/static/js/main.563edb20.js",
     "static/media/PedroFajardo.jpg": "/pedro-profile-website/static/media/PedroFajardo.f6f074943963ca70aca5.jpg",
     "index.html": "/pedro-profile-website/index.html",
-    "main.762feb83.css.map": "/pedro-profile-website/static/css/main.762feb83.css.map",
-    "main.cf53eee4.js.map": "/pedro-profile-website/static/js/main.cf53eee4.js.map"
+    "main.60c6b0d2.css.map": "/pedro-profile-website/static/css/main.60c6b0d2.css.map",
+    "main.563edb20.js.map": "/pedro-profile-website/static/js/main.563edb20.js.map"
   },
   "entrypoints": [
-    "static/css/main.762feb83.css",
-    "static/js/main.cf53eee4.js"
+    "static/css/main.60c6b0d2.css",
+    "static/js/main.563edb20.js"
   ]
 }

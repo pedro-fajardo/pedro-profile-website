@@ -5,6 +5,8 @@ import LandingPage from './components/LandingPage';
 import ProfessionalExperienceComponent from './components/ProfessionalExperienceComponent';
 import FloatingHamburgerMenu from './components/FloatingHamburguerMenu';
 import Skills from './components/Skills';
+import Contact from './components/Contact';
+import Copyright from './components/Copyright';
 
 function App() {
   const [loading, setLoading] = useState(true); // State for the loading bar
@@ -24,6 +26,10 @@ function App() {
           <div id="skills">
             <Skills></Skills>
           </div>
+          <div id="contact">
+            <Contact></Contact>
+          </div>
+          <Copyright></Copyright>
         </>
       }
     </div>

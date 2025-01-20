@@ -3,18 +3,18 @@ import React from "react";
 const Skills = () => {
     const skills = [
         { name: "JavaScript", percentage: 90 },
-        { name: "HTML", percentage: 90 },
+        { name: "HTML & CSS", percentage: 90 },
         { name: "React", percentage: 85 },
-        { name: "CSS", percentage: 80 },
-        { name: "Node.js", percentage: 70 },
-        { name: "OutSystems", percentage: 80 },
+        { name: "OutSystems", percentage: 85 },
+        { name: "Python", percentage: 80 },
+        { name: "Java", percentage: 75 },
         { name: "SQL", percentage: 75 },
         { name: "MongoDB", percentage: 70 },
     ];
 
     return (
-        <div className="pt-24 bg-zinc-800">
-            <h2 className="text-4xl font-semibold mb-6 text-center font-sourceCode text-zinc-300">Skills</h2>
+        <div className="pt-24 bg-zinc-800 font-sourceCode">
+            <h2 className="text-4xl font-semibold mb-6 text-center text-zinc-300">Skills</h2>
             <div className="pt-4 grid grid-cols-1 md:grid-cols-4 gap-x-1 gap-y-12 p-8 px-20">
 
                 {skills.map((skill, index) => (

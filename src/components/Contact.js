@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -67,7 +69,7 @@ export default function Contact() {
     };
 
     return (
-        <div className="bg-gradient-to-b from-zinc-800 via-red-90 to-red-700 py-16 font-sourceCode">
+        <div className="bg-gradient-to-b from-zinc-800 via-red-90 to-red-700 pt-16 pb-4 font-sourceCode">
             <form onSubmit={handleSubmit} className="max-w-4xl mx-auto p-6 space-y-4 text-white">
                 <h2 className="text-4xl font-bold text-center pb-3">Let's talk!</h2>
                 <p className="text-center pb-4">
@@ -159,6 +161,14 @@ export default function Contact() {
                     </button>
                 </div>
             </form>
-        </div>
+            <div className='w-full text-center pt-4 space-x-4'>
+                <a href={"https://github.com/pedro-fajardo"} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faGithub} className='text-zinc-200 text-4xl'></FontAwesomeIcon>
+                </a>
+                <a href={"https://www.linkedin.com/in/pedro-fajardo-a54767161/"} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faLinkedin} className='text-zinc-200 text-4xl'></FontAwesomeIcon>
+                </a>
+            </div>
+        </div >
     );
 }

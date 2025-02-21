@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle, faWrench, faBriefcase, faAddressCard, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faInfoCircle, faWrench, faBriefcase, faGraduationCap, faAddressCard, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const FloatingHamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +28,9 @@ const FloatingHamburgerMenu = () => {
 
     const menuOptions = [
         { icon: faInfoCircle, text: "Introduction", scrollInto: "introduction" },
-        { icon: faBriefcase, text: "Professional Experience", scrollInto: "professionalExperience" },
+        { icon: faBriefcase, text: "Professional Experience", scrollInto: "experience" },
         { icon: faWrench, text: "Skills", scrollInto: "skills" },
+        { icon: faGraduationCap, text: "Certifications and Courses", scrollInto: "certifications" },
         { icon: faAddressCard, text: "Contact", scrollInto: "contact" },
     ];
 

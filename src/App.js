@@ -2,11 +2,12 @@ import './App.css';
 import { useState } from 'react';
 import IntroductionComponent from './components/IntroductionComponent';
 import LandingPage from './components/LandingPage';
-import ProfessionalExperienceComponent from './components/ProfessionalExperienceComponent';
+import Experience from './components/Experience/Experience';
 import FloatingHamburgerMenu from './components/FloatingHamburguerMenu';
-import Skills from './components/Skills';
+import Skills from './components/skills/Skills';
 import Contact from './components/Contact';
 import Copyright from './components/Copyright';
+import Certifications from './components/certifications/Certifications';
 
 function App() {
   const [loading, setLoading] = useState(true); // State for the loading bar
@@ -20,11 +21,14 @@ function App() {
           <div id="introduction">
             <IntroductionComponent></IntroductionComponent>
           </div>
-          <div id="professionalExperience">
-            <ProfessionalExperienceComponent></ProfessionalExperienceComponent>
+          <div id="experience">
+            <Experience></Experience>
           </div>
           <div id="skills">
             <Skills></Skills>
+          </div>
+          <div id="certifications">
+            <Certifications></Certifications>
           </div>
           <div id="contact">
             <Contact></Contact>

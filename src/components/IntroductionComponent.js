@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBaby, faGraduationCap, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import PedroFajardo from '../images/PedroFajardo.jpg';
 import { faEnvelope, faStar } from "@fortawesome/free-regular-svg-icons";
 
 const IntroductionComponent = () => {
@@ -11,7 +10,7 @@ const IntroductionComponent = () => {
                 {/* Photo Section */}
                 <div className="md:w-1/3 mb-6 md:mb-0">
                     <img
-                        src={PedroFajardo}
+                        src={`${process.env.PUBLIC_URL}/images/PedroFajardo.jpg`}
                         alt="Pedro Fajardo"
                         className="w-64 h-64 rounded-full object-cover mx-auto border-2 border-zinc-500"
                     />

@@ -1,4 +1,10 @@
 import React from "react";
+import SkillCircle from "./SkillCircle";
+import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const SKILLS_DATA = [
   { name: "JavaScript", percentage: 90 },
@@ -13,65 +19,65 @@ const SKILLS_DATA = [
   { name: "MongoDB", percentage: 70 },
 ];
 
-const SkillCircle = React.memo(({ name, percentage }) => {
-  const radius = 70;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference * (1 - percentage / 100);
-
-  return (
-    <div className="flex flex-col items-center justify-center space-y-4 group">
-      <div className="relative w-40 h-40 transform transition-transform duration-300 group-hover:scale-110">
-        <svg 
-          className="absolute inset-0 w-full h-full transform -rotate-90"
-          viewBox="0 0 200 200"
-        >
-          <circle
-            cx="100"
-            cy="100"
-            r={radius}
-            className="stroke-zinc-700 stroke-[10] fill-none"
-          />
-          <circle
-            cx="100"
-            cy="100"
-            r={radius}
-            className="stroke-red-500 stroke-[10] fill-none transition-all duration-1000 ease-out"
-            style={{
-              strokeDasharray: circumference,
-              strokeDashoffset,
-            }}
-          />
-        </svg>
-        {/* Percentage */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-2xl font-bold text-red-500 transition-all duration-300 group-hover:scale-110">
-            {percentage}%
-          </span>
-        </div>
-      </div>
-      {/* Skill Name */}
-      <p className="text-center text-xl text-zinc-200 font-semibold transition-colors duration-300 group-hover:text-red-500">
-        {name}
-      </p>
-    </div>
-  );
-});
-
 const Skills = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
-    <section className="py-24 bg-zinc-800 font-sourceCode">
+    <section ref={ref} className="py-24 bg-zinc-800 font-sourceCode">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-semibold mb-16 text-center text-zinc-300">
           Skills
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-8 gap-y-16">
+        {/* Desktop Grid */}
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-8 gap-y-16">
           {SKILLS_DATA.map((skill) => (
             <SkillCircle
               key={skill.name}
               name={skill.name}
               percentage={skill.percentage}
+              animate={inView}
             />
           ))}
+        </div>
+        {/* Mobile Carousel */}
+        <div className="sm:hidden relative">
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={1}
+            centeredSlides={true}
+            loop={true}
+          >
+            {SKILLS_DATA.map((skill) => (
+              <SwiperSlide key={skill.name}>
+                <div className="flex justify-center">
+                  <SkillCircle
+                    name={skill.name}
+                    percentage={skill.percentage}
+                    animate={inView}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+            {/* Navigation Buttons */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10">
+              <FontAwesomeIcon 
+                icon={faChevronLeft} 
+                className="text-zinc-400 text-2xl" 
+              />
+            </div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10">
+              <FontAwesomeIcon 
+                icon={faChevronRight} 
+                className="text-zinc-400 text-2xl" 
+              />
+            </div>
+          </Swiper>
+          <p className="text-center text-zinc-400 mt-4 text-sm">
+            Swipe to see more skills
+          </p>
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@ const ExperienceCard = ({ experience, isActive, onClick }) => {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
     >
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col md:flex-row items-start gap-4">
         <div className="relative">
           <div className="w-20 h-20 rounded-lg overflow-hidden bg-white/5 flex items-center justify-center">
             <img
@@ -36,7 +36,7 @@ const ExperienceCard = ({ experience, isActive, onClick }) => {
           </div>
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <div className="flex justify-between items-start">
             <div>
               <h3 className="text-2xl font-semibold text-zinc-200 mb-2">
@@ -52,8 +52,7 @@ const ExperienceCard = ({ experience, isActive, onClick }) => {
               </div>
             </div>
             <div
-              className={`transition-transform duration-300 text-red-500 ${isActive ? "rotate-90" : ""
-                }`}
+              className={`transition-transform duration-300 text-red-500 ${isActive ? "rotate-90" : ""}`}
             >
               <FontAwesomeIcon icon={faChevronRight} />
             </div>
@@ -62,7 +61,7 @@ const ExperienceCard = ({ experience, isActive, onClick }) => {
           <AnimatePresence>
             {isActive && (
               <motion.div
-                className="mt-6 space-y-6"
+                className="mt-6 space-y-6 w-full"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ 
                   opacity: 1, 

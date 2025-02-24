@@ -106,45 +106,47 @@ const LandingPage = ({ loading, setLoading }) => {
 				</>
 			)}
 
-			<style jsx>{`
-            @keyframes loading {
-               0% { transform: translateX(-100%); }
-               100% { transform: translateX(0); }
-            }
+			<style>
+				{`
+					@keyframes loading {
+						0% { transform: translateX(-100%); }
+						100% { transform: translateX(0); }
+					}
 
-            .animate-loading {
-               animation: loading 3s linear forwards;
-            }
+					.animate-loading {
+						animation: loading 3s linear forwards;
+					}
 
-            .dot {
-               position: absolute;
-               bottom: -100px;
-               background-color: red;
-               border-radius: 50%;
-               opacity: 0.8;
-               animation: moveUp linear infinite;
-            }
+					.dot {
+						position: absolute;
+						bottom: -100px;
+						background-color: red;
+						border-radius: 50%;
+						opacity: 0.8;
+						animation: moveUp linear infinite;
+					}
 
-            @keyframes moveUp {
-               0% {
-                  transform: translateY(0);
-                  opacity: 0.8;
-               }
-               100% {
-                  transform: translateY(-120vh);
-                  opacity: 0;
-               }
-            }
+					@keyframes moveUp {
+						0% {
+							transform: translateY(0);
+							opacity: 0.8;
+						}
+						100% {
+							transform: translateY(-120vh);
+							opacity: 0;
+						}
+					}
 
-            @keyframes fade {
-               0% { opacity: 0; }
-               100% { opacity: 1; }
-            }
+					@keyframes fade {
+						0% { opacity: 0; }
+						100% { opacity: 1; }
+					}
 
-            .animate-fade {
-               animation: fade 4s;
-            }
-         `}</style>
+					.animate-fade {
+						animation: fade 4s;
+					}
+				`}
+			</style>
 		</div>
 	);
 };

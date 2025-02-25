@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
-// Add validation schema
 const schema = yup.object().shape({
   firstName: yup.string().required('First name is required'),
   lastName: yup.string().required('Last name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
-  phone: yup.string().matches(/^[0-9]{10}$/, 'Phone number is not valid'),
+  phone: yup.string().test('is-valid-phone', 'Phone number is not valid', (value) => {
+    if (!value) return true;
+    const defaultCountry = 'PT';
+    try {
+      const phoneNumber = parsePhoneNumberFromString(value, defaultCountry);
+      return phoneNumber ? phoneNumber.isValid() : false;
+    } catch (error) {
+      return false;
+    }
+  }),
   message: yup.string().required('Message is required').min(10, 'Message must be at least 10 characters')
 });
 
@@ -44,6 +53,12 @@ export default function Contact() {
       });
     }
   };
+
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setSuccessMessage('');
+    }
+  }, [errors]);
 
   return (
     <div className="bg-gradient-to-b from-zinc-800 via-red-90 to-red-700 pt-16 pb-4 font-sourceCode">

@@ -1,12 +1,10 @@
-
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState, useRef, Fragment } from 'react';
+import { useState, useRef, Fragment, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css';
 import ProjectCard from './ProjectCard';
-
 
 const projects = [
 	{
@@ -25,7 +23,7 @@ const projects = [
 		thumbnail: `${process.env.PUBLIC_URL}/images/projects/weather-app.png`,
 		techStack: ['React', 'TypeScript', 'CSS', 'HTML'],
 		link: 'https://pedro-fajardo.github.io/weather-app/',
-		github: 'https://github.com/pedro-fajardo/pedro-profile-website'
+		github: 'https://github.com/pedro-fajardo/weather-app'
 	},
 	{
 		id: 3,
@@ -37,18 +35,29 @@ const projects = [
 ];
 
 const ProjectList = () => {
-	const itemsPerPage = window.innerWidth < 768 ? 1 : 3;
+	const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 768 ? 1 : 3);
 	const [activeIndex, setActiveIndex] = useState(0);
-	const isMobile = window.innerWidth < 768;
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 	const swiperRef = useRef(null);
 
+	useEffect(() => {
+		const handleResize = () => {
+			const mobile = window.innerWidth < 768;
+			setIsMobile(mobile);
+			setItemsPerPage(mobile ? 1 : 3);
+		};
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	return (
-		<section className="py-12 md:py-24 bg-zinc-800 font-sourceCode relative">
+		<section className="py-12 md:py-24 bg-zinc-800 font-sourceCode relative overflow-visible">
 			<div className="container mx-auto px-4">
 				<h2 className="text-2xl md:text-4xl font-semibold mb-8 md:mb-16 text-center text-zinc-300">
 					Some of the projects I've made
 				</h2>
-				<div className="relative">
+				<div className="relative overflow-visible">
 					<Swiper
 						spaceBetween={30}
 						slidesPerView={itemsPerPage}
@@ -63,11 +72,13 @@ const ProjectList = () => {
 						allowTouchMove={isMobile}
 						onSwiper={(swiper) => (swiperRef.current = swiper)}
 						onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+						style={{ height: 'auto', overflow: 'visible' }}
+						className="overflow-visible"
 					>
 						{projects.map((project, index) => (
-							<SwiperSlide key={project.id}>
-								<ProjectCard 
-									project={project} 
+							<SwiperSlide key={project.id} style={{ height: 'auto', overflow: 'visible' }}>
+								<ProjectCard
+									project={project}
 									isActive={index === activeIndex}
 									index={index}
 									activeIndex={activeIndex}
@@ -99,13 +110,13 @@ const ProjectList = () => {
 					}
 					{isMobile &&
 						<p className="text-center text-zinc-400 mt-4 text-sm">
-							Swipe to see more skills
+							Swipe to see more projects
 						</p>
 					}
 				</div>
 			</div>
-		</section >
+		</section>
 	);
 };
 
-export default ProjectList; 
+export default ProjectList;

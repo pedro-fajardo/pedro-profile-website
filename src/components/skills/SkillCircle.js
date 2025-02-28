@@ -18,7 +18,7 @@ const SkillCircle = React.memo(({ name, percentage, animate }) => {
 	}, [animate, controls, strokeDashoffset]);
 
 	return (
-		<motion.div 
+		<motion.div
 			className="flex flex-col items-center justify-center space-y-4 group"
 			initial={{ opacity: 0, y: 20 }}
 			animate={animate ? { opacity: 1, y: 0 } : {}}
@@ -47,7 +47,7 @@ const SkillCircle = React.memo(({ name, percentage, animate }) => {
 				</svg>
 
 				<div className="absolute inset-0 flex items-center justify-center">
-					<motion.span 
+					<motion.span
 						className="text-2xl font-bold text-red-500 transition-all duration-300 group-hover:scale-110"
 						initial={{ scale: 0 }}
 						animate={animate ? { scale: 1 } : {}}
@@ -58,7 +58,7 @@ const SkillCircle = React.memo(({ name, percentage, animate }) => {
 				</div>
 			</div>
 
-			<motion.p 
+			<motion.p
 				className="text-center text-xl text-zinc-200 font-semibold transition-colors duration-300 group-hover:text-red-500"
 				initial={{ opacity: 0 }}
 				animate={animate ? { opacity: 1 } : {}}

@@ -34,12 +34,12 @@ const FloatingHamburgerMenu = () => {
 	];
 
 	const menuVariants = {
-		open: { 
+		open: {
 			opacity: 1,
 			y: 0,
 			transition: { staggerChildren: 0.1, delayChildren: 0.2 }
 		},
-		closed: { 
+		closed: {
 			opacity: 0,
 			y: -20,
 			transition: { staggerChildren: 0.05, staggerDirection: -1 }

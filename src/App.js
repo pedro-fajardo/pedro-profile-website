@@ -11,7 +11,7 @@ import Certifications from './components/certifications/Certifications';
 import ProjectList from './components/projects/ProjectList';
 
 function App() {
-	const [loading, setLoading] = useState(true); // State for the loading bar
+	const [loading, setLoading] = useState(true);
 
 	return (
 		<div className='overflow-x-hidden bg-zinc-800'>

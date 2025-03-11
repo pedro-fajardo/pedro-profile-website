@@ -79,7 +79,7 @@ const Experience = () => {
 	const [activeExperience, setActiveExperience] = useState(0);
 
 	return (
-		<section className="py-24" id="experience">
+		<section className="pt-24" id="experience">
 			<div className="container mx-auto px-4 max-w-4xl">
 				<motion.h2
 					className="text-3xl sm:text-4xl font-semibold mb-12 text-center text-zinc-300 font-sourceCode"

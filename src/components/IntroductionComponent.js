@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBaby, faGraduationCap, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope, faStar } from "@fortawesome/free-regular-svg-icons";
+import { faBaby, faGraduationCap, faLocationDot, faEnvelope, faStar, faLanguage, faBriefcase, faLaptop, faClock } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -10,68 +9,83 @@ const IntroductionComponent = () => {
 
 	const containerVariants = {
 		hidden: { opacity: 0 },
-		visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+		visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
 	};
 
 	const itemVariants = {
-		hidden: { opacity: 0, y: 20 },
-		visible: { opacity: 1, y: 0 }
+		hidden: { opacity: 0, y: 30 },
+		visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 	};
 
 	return (
-		<>
+		<div className="min-h-screen pt-20 px-4 bg-zinc-800">
 			<motion.div
-				className="flex flex-col md:flex-row items-center justify-center p-16 text-white"
+				className="max-w-6xl mx-auto"
 				initial="hidden"
 				animate={inView ? "visible" : "hidden"}
 				variants={containerVariants}
 				ref={ref}
 			>
-				<motion.div className="md:w-1/3 mb-6 md:mb-0" variants={itemVariants}>
-					<img
-						src={`${process.env.PUBLIC_URL}/images/PedroFajardo.jpg`}
-						alt="Pedro Fajardo"
-						className="w-64 h-64 rounded-full object-cover mx-auto border-2 border-zinc-500 hover:scale-105 transition-transform duration-300"
-					/>
+				<motion.div className="flex flex-col md:flex-row items-center gap-12 mb-20" variants={itemVariants}>
+					<div className="relative">
+						<div className="absolute -inset-1.5 bg-gradient-to-r from-red-500 to-zinc-500 rounded-full blur-md"></div>
+						<img
+							src={`${process.env.PUBLIC_URL}/images/PedroFajardo.jpg`}
+							alt="Pedro Fajardo"
+							className="relative w-64 h-64 rounded-full object-cover border-4 border-zinc-800 hover:scale-105 transition-transform duration-300"
+						/>
+					</div>
+
+					<div className="md:w-2/3 text-center md:text-left space-y-6">
+						<h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent font-sourceCode">
+							Hi, I'm Pedro Fajardo!
+						</h2>
+						<p className="text-lg text-zinc-300 leading-relaxed">
+							I'm a passionate software developer with a focus on building
+							intuitive and user-friendly applications. I have experience working
+							with modern web technologies such as{' '}
+							<span className="text-red-400 font-semibold">React</span>,{' '}
+							<span className="text-red-400 font-semibold">Node.js</span>,{' '}
+							<span className="text-red-400 font-semibold">Next.js</span> and low-code platforms such as{' '}
+							<span className="text-red-400 font-semibold">OutSystems</span>. I
+							enjoy solving complex problems and creating seamless user experiences and having a friendly and happy team environment.
+						</p>
+					</div>
 				</motion.div>
 
-				<motion.div className="md:w-2/3 md:ml-6 md:mr-24 text-zinc-200 text-center md:text-left" variants={itemVariants}>
-					<h2 className="text-3xl font-semibold mb-8 font-sourceCode">Hi, I'm Pedro Fajardo!</h2>
-					<p className="mb-4 text-lg">
-						I'm a passionate software developer with a focus on building
-						intuitive and user-friendly applications. I have experience working
-						with modern web technologies such as <b className="text-red-500 hover:text-red-400 transition-colors">React</b>, <b className="text-red-500 hover:text-red-400 transition-colors">Node.js</b>,
-						and <b className="text-red-500 hover:text-red-400 transition-colors">Next.js</b> and low-code platforms such as <b className="text-red-500 hover:text-red-400 transition-colors">OutSystems</b>. I
-						enjoy solving complex problems and creating seamless user experiences and having a friendly and happy team environment.
-					</p>
+				<motion.div 
+					className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+					variants={itemVariants}
+				>
+					{[
+						{ icon: faBaby, title: "Full Name", content: "Pedro Miguel Oliveira Fajardo" },
+						{ icon: faStar, title: "Born", content: "27 Aug 1998 - Figueira da Foz, Portugal" },
+						{ icon: faLocationDot, title: "Currently Living", content: "Guia, Portugal" },
+						{ icon: faEnvelope, title: "Email", content: "pedro.fajardo.dev@gmail.com" },
+						{ icon: faGraduationCap, title: "Education", 
+						  content: <>Bachelor's Degree in Computer Science<br/><span className="text-sm text-zinc-400">Universidade de Aveiro</span></> },
+						{ icon: faLanguage, title: "Languages", 
+						  content: <>Portuguese (Native)<br/>English (Fluent)</> },
+						{ icon: faBriefcase, title: "Experience", 
+						  content: "5+ Years in Software Development" },
+						{ icon: faLaptop, title: "Work Preference", 
+						  content: "Remote / Hybrid" },
+						{ icon: faClock, title: "Timezone", 
+						  content: "GMT/UTC (Lisbon)" },
+					].map((item, index) => (
+						<motion.div
+							key={index}
+							className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-xl p-6 hover:bg-zinc-700/50 transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
+							whileHover={{ scale: 1.05 }}
+						>
+							<FontAwesomeIcon icon={item.icon} className="text-red-400 text-2xl mb-4" />
+							<h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+							<p className="text-zinc-300">{item.content}</p>
+						</motion.div>
+					))}
 				</motion.div>
 			</motion.div>
-			<div className="w-full font-sourceCode pb-16">
-				<motion.div
-					className="bg-zinc-200 mx-4 md:mx-60 py-14 md:py-24 px-8 md:px-24 border-8 bg-zinc-200 border-zinc-500 rounded-md text-center justify-items-center"
-					initial={{ opacity: 0, y: 50 }}
-					animate={inView ? { opacity: 1, y: 0 } : {}}
-					transition={{ delay: 0.5 }}
-				>
-					<h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faBaby}></FontAwesomeIcon> Full Name</h2>
-					<p className="text-xl md:text-2xl pb-10 md:pb-16">Pedro Miguel Oliveira Fajardo</p>
-
-					<h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon> Born</h2>
-					<p className="text-xl md:text-2xl pb-10 md:pb-16">27 Aug 1998 - Figueira da Foz, Portugal</p>
-
-					<h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> Currently Living</h2>
-					<p className="text-xl md:text-2xl pb-10 md:pb-16">Guia, Portugal</p>
-
-					<h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon> Email</h2>
-					<p className="text-xl md:text-2xl pb-10 md:pb-16 break-words">pedro.fajardo.dev@gmail.com</p>
-
-					<h2 className="text-2xl md:text-3xl font-bold pb-8"><FontAwesomeIcon icon={faGraduationCap}></FontAwesomeIcon> Degree</h2>
-					<p className="text-xl md:text-2xl">Bachelor's Degree in Computer Science</p>
-					<p className="text-md">Universidade de Aveiro</p>
-				</motion.div>
-			</div>
-		</>
-
+		</div>
 	);
 };
 

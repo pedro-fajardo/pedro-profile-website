@@ -47,39 +47,39 @@ const FloatingHamburgerMenu = () => {
 	};
 
 	const itemVariants = {
-		open: { opacity: 1, y: 0 },
-		closed: { opacity: 0, y: -10 }
+		open: { opacity: 1},
+		closed: { opacity: 0 }
 	};
 
 	return (
 		<div className="fixed top-4 left-4 z-50">
 			<button
-				className="bg-transparent text-white p-4 rounded-full hover:bg-zinc-700 transition focus:outline-none"
+				className="bg-zinc-800/70 backdrop-blur-sm text-white p-3.5 rounded-xl hover:bg-zinc-700/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-zinc-400 shadow-lg"
 				onClick={toggleMenu}
 				aria-label="Menu"
 			>
-				<FontAwesomeIcon icon={faBars} className="text-xl w-6 h-6" />
+				<FontAwesomeIcon icon={faBars} className="text-xl w-5 h-5" />
 			</button>
 
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
-						className="bg-zinc-600 rounded shadow-lg py-2 w-54"
+						className="absolute top-16 bg-zinc-800/90 backdrop-blur-md rounded-xl shadow-xl py-3 w-64 border border-zinc-700/50"
 						initial="closed"
 						animate="open"
 						exit="closed"
 						variants={menuVariants}
 					>
-						<ul className="flex flex-col space-y-2">
+						<ul className="flex flex-col space-y-1">
 							{menuOptions.map((option, index) => (
 								<motion.li
 									key={index}
-									className="px-4 py-2 flex items-center space-x-3 cursor-pointer hover:bg-zinc-500 transition-colors"
+									className="mx-2 px-4 py-2.5 flex items-center space-x-3 cursor-pointer hover:bg-zinc-700/70 rounded-lg transition-all duration-200"
 									onClick={() => handleComponentScroll(option.scrollInto)}
 									variants={itemVariants}
 								>
-									<FontAwesomeIcon icon={option.icon} className="text-zinc-200" />
-									<span className="text-zinc-200">{option.text}</span>
+									<FontAwesomeIcon icon={option.icon} className="text-zinc-300 w-5 h-5" />
+									<span className="text-zinc-200 font-medium">{option.text}</span>
 								</motion.li>
 							))}
 						</ul>

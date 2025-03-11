@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pedro-profile-website/static/css/main.e444b911.css",
-    "main.js": "/pedro-profile-website/static/js/main.be7f7088.js",
+    "main.js": "/pedro-profile-website/static/js/main.e399901a.js",
     "index.html": "/pedro-profile-website/index.html",
     "main.e444b911.css.map": "/pedro-profile-website/static/css/main.e444b911.css.map",
-    "main.be7f7088.js.map": "/pedro-profile-website/static/js/main.be7f7088.js.map"
+    "main.e399901a.js.map": "/pedro-profile-website/static/js/main.e399901a.js.map"
   },
   "entrypoints": [
     "static/css/main.e444b911.css",
-    "static/js/main.be7f7088.js"
+    "static/js/main.e399901a.js"
   ]
 }

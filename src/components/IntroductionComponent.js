@@ -45,8 +45,8 @@ const IntroductionComponent = () => {
 							intuitive and user-friendly applications. I have experience working
 							with modern web technologies such as{' '}
 							<span className="text-red-400 font-semibold">React</span>,{' '}
-							<span className="text-red-400 font-semibold">Node.js</span>,{' '}
-							<span className="text-red-400 font-semibold">Next.js</span> and low-code platforms such as{' '}
+							<span className="text-red-400 font-semibold">TypeScript</span>,{' '}
+							and low-code platforms such as{' '}
 							<span className="text-red-400 font-semibold">OutSystems</span>. I
 							enjoy solving complex problems and creating seamless user experiences and having a friendly and happy team environment.
 						</p>

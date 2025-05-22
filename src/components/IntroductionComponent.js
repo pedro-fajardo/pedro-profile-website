@@ -18,7 +18,7 @@ const IntroductionComponent = () => {
 	};
 
 	return (
-		<div className="min-h-screen pt-20 px-4 bg-zinc-800">
+		<div className="pt-20 px-4 bg-zinc-800">
 			<motion.div
 				className="max-w-6xl mx-auto"
 				initial="hidden"

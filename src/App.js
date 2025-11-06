@@ -11,6 +11,7 @@ import Copyright from './components/Copyright';
 import Certifications from './components/certifications/Certifications';
 import ProjectList from './components/projects/ProjectList';
 import Seo from './components/Seo'; // added
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -51,6 +52,7 @@ function App() {
 					</>
 				}
 			</div>
+			<Analytics />
 		</>
 	);
 }

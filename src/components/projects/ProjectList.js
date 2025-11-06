@@ -64,7 +64,7 @@ const ProjectList = () => {
 		<section className="pt-12 md:pt-24 bg-zinc-800 font-sourceCode relative overflow-visible">
 			<div className="container mx-auto px-4">
 				<h2 className="text-2xl md:text-4xl font-semibold mb-8 md:mb-16 text-center text-zinc-300">
-					Some of the projects I've made
+					Some of the projects I've developed
 				</h2>
 				<div className="relative overflow-visible">
 					<Swiper

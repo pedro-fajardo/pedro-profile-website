@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import IntroductionComponent from './components/IntroductionComponent';
 import LandingPage from './components/LandingPage';
-import Experience from './components/experience/Experience';
+import Experience from './components/experience/experience';
 import FloatingHamburgerMenu from './components/FloatingHamburguerMenu';
 import Skills from './components/skills/Skills';
 import Contact from './components/Contact';

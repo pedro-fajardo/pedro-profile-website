@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ExperienceCard from "./ExperienceCard";
+import ExperienceCard from "./experienceCard";
 import { motion, AnimatePresence } from "framer-motion";
 
 const EXPERIENCES_DATA = [

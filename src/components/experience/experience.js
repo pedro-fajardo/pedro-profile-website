@@ -41,7 +41,7 @@ const EXPERIENCES_DATA = [
 		logo: `${process.env.PUBLIC_URL}/images/company/itGlee.png`,
 				partner: "Deloitte",
 		description:
-			"Working on PPL (Placing Platform Limited) Next Gen project using OutSystems. PPL Next Gen is the new electronic trading platform for the London insurance market. It's not simply a replacement for the existing PPL platform. It's the London market rebuilt and reimagined for a digital first environment, more intuitive, more flexible, more scalable.",
+			"Worked on PPL (Placing Platform Limited) Next Gen project using OutSystems. PPL Next Gen is the new electronic trading platform for the London insurance market. It's not simply a replacement for the existing PPL platform. It's the London market rebuilt and reimagined for a digital first environment, more intuitive, more flexible, more scalable.",
 		keyAchievements: [
 			"Defect Analysis.",
 			"Defect Fixing.",
@@ -118,7 +118,7 @@ const EXPERIENCES_DATA = [
 		],
 	},
 	{
-		company: "itGlee - PPL Next Gen",
+		company: "itGlee",
 		position: "OutSystems Developer",
 		duration: "Jan 2022 - Sep 2024",
 		logo: `${process.env.PUBLIC_URL}/images/company/itGlee.png`,

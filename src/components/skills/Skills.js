@@ -11,7 +11,7 @@ const SKILLS_DATA = [
 	{ name: "TypeScript", percentage: 80 },
 	{ name: "HTML & CSS", percentage: 90 },
 	{ name: "React", percentage: 85 },
-	{ name: "Redux", percentage: 75 },
+	{ name: "GenAI", percentage: 80 },
 	{ name: "OutSystems", percentage: 85 },
 	{ name: "Python", percentage: 80 },
 	{ name: "Java", percentage: 75 },

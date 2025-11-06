@@ -41,7 +41,7 @@ const ExperienceCard = ({ experience, isActive, onClick }) => {
 							<h3 className="text-2xl font-semibold text-zinc-200 mb-2">
 								{experience.company}
 							</h3>
-							<div className="flex items-center gap-2 text-zinc-400 mb-3 text-lg">
+							<div className="flex items-center gap-2 text-zinc-400 text-lg">
 								<FontAwesomeIcon icon={faBuilding} />
 								<span>{experience.position}</span>
 							</div>
@@ -50,7 +50,7 @@ const ExperienceCard = ({ experience, isActive, onClick }) => {
 								<span>{experience.duration}</span>
 							</div>
 							{experience.partner && ( // Display partner if exists
-								<div className="flex items-center gap-2 text-zinc-400 mb-3 text-lg">
+								<div className="flex items-center gap-2 text-zinc-500 mb-3 text-lg">
 									<FontAwesomeIcon icon={faBuilding} />
 									<span>Partner: {experience.partner}</span>
 								</div>

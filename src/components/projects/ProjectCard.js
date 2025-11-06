@@ -1,10 +1,19 @@
 import { motion } from 'framer-motion';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faMessage } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const ProjectCard = ({ project, isActive, index, activeIndex }) => {
+    const scrollToContact = () => {
+        const el = document.getElementById('contact');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+        window.location.hash = '#contact';
+    };
+
 	return (
 		<div className="h-full w-full py-4 px-2">
 			<motion.article
@@ -58,7 +67,7 @@ const ProjectCard = ({ project, isActive, index, activeIndex }) => {
 									Visit
 								</a>
 							)}
-							{project.github && (
+							{project.github ? (
 								<a
 									href={project.github}
 									target="_blank"
@@ -68,6 +77,14 @@ const ProjectCard = ({ project, isActive, index, activeIndex }) => {
 									<FontAwesomeIcon icon={faGithub} className="text-xs md:text-sm" />
 									GitHub
 								</a>
+							) : project.privateRepo && (
+								<button
+									onClick={scrollToContact}
+									className="flex items-center justify-center gap-1 md:gap-2 flex-1 px-2 md:px-4 py-1 md:py-2 bg-zinc-600 text-white rounded-lg hover:bg-zinc-500 transition-colors text-sm md:text-base"
+								>
+									<FontAwesomeIcon icon={faMessage} className="text-xs md:text-sm" />
+									Get Quote
+								</button>
 							)}
 						</div>
 					</div>

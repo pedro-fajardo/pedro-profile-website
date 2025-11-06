@@ -49,6 +49,12 @@ const ExperienceCard = ({ experience, isActive, onClick }) => {
 								<FontAwesomeIcon icon={faCalendar} />
 								<span>{experience.duration}</span>
 							</div>
+							{experience.partner && ( // Display partner if exists
+								<div className="flex items-center gap-2 text-zinc-400 mb-3 text-lg">
+									<FontAwesomeIcon icon={faBuilding} />
+									<span>Partner: {experience.partner}</span>
+								</div>
+							)}
 						</div>
 						<div
 							className={`transition-transform duration-300 text-red-500 ${isActive ? "rotate-90" : ""}`}

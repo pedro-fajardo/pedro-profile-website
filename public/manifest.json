@@ -3,12 +3,12 @@
   "name": "Pedro Fajardo Portfolio",
   "icons": [
     {
-      "src": "images/pedrofajardo.jpg",
+      "src": "images/PedroFajardo.jpg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "images/pedrofajardo.jpg",
+      "src": "images/PedroFajardo.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }

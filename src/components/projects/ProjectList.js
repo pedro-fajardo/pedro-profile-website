@@ -18,6 +18,15 @@ const projects = [
 	},
 	{
 		id: 2,
+		name: 'Travel Consultant Website',
+		description: 'Site for a travel consultant to showcase their services and allow users to contact them',
+		thumbnail: `${process.env.PUBLIC_URL}/images/projects/travelconsultant.png`,
+		techStack: ['React', 'JavaScript', 'TailwindCSS', 'CSS', 'HTML', 'EmailJS', 'Firebase'],
+		link: 'https://silvanagarcia.pt',
+		github: 'https://github.com/pedro-fajardo/travel-consultant'
+	},
+	{
+		id: 3,
 		name: 'Weather App',
 		description: 'Weather app that provides a 5-day forecast, temperature map and temperature evolution graph for the desired city',
 		thumbnail: `${process.env.PUBLIC_URL}/images/projects/weather-app.png`,
@@ -26,7 +35,7 @@ const projects = [
 		github: 'https://github.com/pedro-fajardo/weather-app'
 	},
 	{
-		id: 3,
+		id: 4,
 		name: 'Equipment Repair Management App',
 		description: 'App for management of equipments that come for repair to an appliance store',
 		thumbnail: `${process.env.PUBLIC_URL}/images/projects/jomafal-app.png`,

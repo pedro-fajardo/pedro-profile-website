@@ -21,7 +21,7 @@ function App() {
 				title="Pedro Fajardo — Frontend Developer"
 				description="Pedro Fajardo — Frontend Developer (React, TailwindCSS). Portfolio with projects, experience and contact form."
 				url="https://pedrofajardodev.com/"
-				image={`${process.env.PUBLIC_URL}/images/seo/PedroFajardo.jpg`}
+				image={`${process.env.PUBLIC_URL}/images/PedroFajardo.jpg`}
 				twitterHandle="@pedrofajardo"
 			/>
 			<div className='overflow-x-hidden bg-zinc-800'>

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const EXPERIENCES_DATA = [
 	{
 		company: "itGlee",
-		position: "Frontend Developer",
+		position: "Frontend/GenAI Developer",
 		duration: "October 2025 - Current",
 		logo: `${process.env.PUBLIC_URL}/images/company/itGlee.png`,
 		partner: "Deloitte",

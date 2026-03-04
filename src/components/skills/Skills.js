@@ -8,7 +8,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 const SKILLS_DATA = [
 	{ name: "JavaScript", percentage: 90 },
-	{ name: "TypeScript", percentage: 80 },
+	{ name: "TypeScript", percentage: 85 },
 	{ name: "HTML & CSS", percentage: 90 },
 	{ name: "React", percentage: 85 },
 	{ name: "GenAI", percentage: 80 },

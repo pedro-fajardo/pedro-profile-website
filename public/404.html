@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<title>Page not found — Pedro Fajardo</title>
+		<link rel="icon" href="/favicon.ico" sizes="48x48" />
+		<style>
+			html { color-scheme: dark; }
+			body {
+				margin: 0;
+				min-height: 100svh;
+				display: grid;
+				place-items: center;
+				padding: 16px;
+				background: linear-gradient(#000, #27272a);
+				color: #e4e4e7;
+				font: 15px/1.7 'Source Code Pro', ui-monospace, Menlo, Consolas, monospace;
+			}
+			main {
+				width: 100%;
+				max-width: 40rem;
+				border: 1px solid #3f3f46;
+				border-radius: 12px;
+				background: #18181b;
+				padding: 24px;
+				box-sizing: border-box;
+			}
+			.p { color: #ff6467; }
+			.m { color: #a1a1aa; }
+			h1 { margin: 0.75rem 0; font-size: clamp(2rem, 8vw, 3.5rem); line-height: 1.1; color: #f4f4f5; }
+			a { color: #ff6467; }
+		</style>
+	</head>
+	<body>
+		<main>
+			<p><span class="p">pedro@figueira</span><span class="m">:~$</span> cd <span id="path">this-page</span></p>
+			<h1>404</h1>
+			<p class="m">cd: no such file or directory. The page you were looking for doesn't exist or has moved.</p>
+			<p class="m" lang="pt-PT">cd: diretório inexistente. A página que procuras não existe ou mudou de sítio.</p>
+			<p><span class="p">pedro@figueira</span><span class="m">:~$</span> <a href="/">cd ~</a> <span class="m">— back to the homepage</span></p>
+			<p><span class="p">pedro@figueira</span><span class="m">:~$</span> <a href="/pt/" lang="pt-PT">cd ~/pt</a> <span class="m" lang="pt-PT">— voltar à página inicial</span></p>
+		</main>
+		<script>
+			document.getElementById('path').textContent = location.pathname.replace(/^\//, '') || 'this-page';
+		</script>
+	</body>
+</html>

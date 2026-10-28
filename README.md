@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# pedrofajardodev.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal site of Pedro Fajardo — React 19, Vite and Tailwind CSS 4, prerendered to static HTML in English (`/`)
+and European Portuguese (`/pt/`).
 
-## Available Scripts
+## Scripts
 
-In the project directory, you can run:
+| Command           | What it does                                                          |
+| ----------------- | --------------------------------------------------------------------- |
+| `npm run dev`     | Local dev server (`/` English, `/pt/` Portuguese)                     |
+| `npm run build`   | Client build + one prerendered page per language + `sitemap.xml`      |
+| `npm run preview` | Serves the production build                                           |
+| `npm run images`  | Regenerates WebP images, icons and Open Graph cards from `assets/originals/` |
 
-### `npm start`
+## Where things live
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `src/data/profile.js` — all content in English: experience, skills, projects, certifications.
+- `src/i18n/en.js`, `src/i18n/pt.js` — UI strings and SEO metadata per language. `pt.js` also translates the
+  content by `id` (`content.roles['itglee-genai']`, `content.projects.crm`, …); anything not translated falls
+  back to English. When you add a role or project to `profile.js`, add its Portuguese text to `pt.js` too.
+- `src/components/sections/` — one component per page section (`Terminal.jsx` holds the hero commands,
+  `AsciiField.jsx` the background animation).
+- `src/index.css` — fonts, theme and animation styles.
+- `assets/originals/` — full-size source images. Add an image here, run `npm run images`, then reference
+  `/images/<folder>/<name>-<width>.webp` from the data file.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## SEO
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The canonical origin is `PROFILE.url` in `src/data/profile.js` (production serves `www`); keep
+  `public/robots.txt` in sync if the domain changes.
+- `npm run build` writes `build/index.html` and `build/pt/index.html`, each with its own `lang`, title, description,
+  canonical, `hreflang` alternates (en, pt-PT, x-default), Open Graph and JSON-LD (`WebSite`, `ProfilePage`,
+  `Person` with credentials, one `CreativeWork` per project), plus `build/sitemap.xml` listing both languages —
+  all from the same data the page renders (`src/seo.js`, `scripts/prerender.mjs`).
+- `public/404.html` is served by Vercel for unknown paths (`noindex`).

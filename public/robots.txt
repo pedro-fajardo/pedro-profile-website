@@ -1,6 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-Sitemap: https://pedrofajardodev.com/sitemap.xml
-Host: https://pedrofajardodev.com
+Sitemap: https://www.pedrofajardodev.com/sitemap.xml
